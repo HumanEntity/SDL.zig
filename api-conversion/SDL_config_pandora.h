@@ -1,13 +1,41 @@
+/*
+  Simple DirectMedia Layer
+  Copyright (C) 1997-2024 Sam Lantinga <slouken@libsdl.org>
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+*/
+
 #ifndef SDL_config_pandora_h_
 #define SDL_config_pandora_h_
 #define SDL_config_h_
+
+/* This is a set of defines to configure the SDL features */
+
+/* General platform specific identifiers */
 #include "SDL_platform.h"
+
 #ifdef __LP64__
 #define SIZEOF_VOIDP 8
 #else
 #define SIZEOF_VOIDP 4
 #endif
+
 #define SDL_BYTEORDER 1234
+
 #define STDC_HEADERS 1
 #define HAVE_ALLOCA_H 1
 #define HAVE_CTYPE_H 1
@@ -25,6 +53,7 @@
 #define HAVE_STRINGS_H 1
 #define HAVE_STRING_H 1
 #define HAVE_SYS_TYPES_H 1
+
 #define HAVE_DLOPEN 1
 #define HAVE_MALLOC 1
 #define HAVE_CALLOC 1
@@ -36,6 +65,7 @@
 #define HAVE_PUTENV 1
 #define HAVE_UNSETENV 1
 #define HAVE_QSORT 1
+#define HAVE_BSEARCH 1
 #define HAVE_ABS 1
 #define HAVE_BCOPY 1
 #define HAVE_MEMSET 1
@@ -83,21 +113,29 @@
 #define HAVE_SIGACTION 1
 #define HAVE_SETJMP 1
 #define HAVE_NANOSLEEP 1
+
 #define SDL_AUDIO_DRIVER_DUMMY 1
 #define SDL_AUDIO_DRIVER_OSS 1
+
 #define SDL_INPUT_LINUXEV 1
 #define SDL_JOYSTICK_LINUX 1
 #define SDL_JOYSTICK_VIRTUAL 1
 #define SDL_HAPTIC_LINUX 1
+
 #define SDL_SENSOR_DUMMY 1
+
 #define SDL_LOADSO_DLOPEN 1
+
 #define SDL_THREAD_PTHREAD 1
 #define SDL_THREAD_PTHREAD_RECURSIVE_MUTEX_NP 1
+
 #define SDL_TIMER_UNIX 1
 #define SDL_FILESYSTEM_UNIX 1
+
 #define SDL_VIDEO_DRIVER_DUMMY 1
 #define SDL_VIDEO_DRIVER_X11 1
 #define SDL_VIDEO_DRIVER_PANDORA 1
 #define SDL_VIDEO_RENDER_OGL_ES 1
 #define SDL_VIDEO_OPENGL_ES 1
-#endif 
+
+#endif /* SDL_config_pandora_h_ */
